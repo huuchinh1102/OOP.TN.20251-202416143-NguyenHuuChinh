@@ -1,0 +1,7 @@
+Câu hỏi 1: Tại sao sau khi chạy phương thức swap(s1, s2) thì tên của hai học sinh vẫn không thay đổi? Java là truyền tham trị hay tham chiếu?
+=> Tên hai học sinh không thay đổi vì Java luôn là ngôn ngữ truyền tham trị
+- Khi gọi swap(s1, s2), giá trị được truyền vào hàm swap không phải là bản thân đối tượng, mà là bản sao của địa chỉ bộ nhớ mà s1 và s2 đang nắm giữ
+- Hai biến gốc s1 và s2 ở hàm main không hề bị tác động, chúng vẫn trỏ vào địa chỉ bộ nhớ ban đầu của đối tượng
+
+Câu hỏi 2: Bạn làm thế nào để phương thức swap hoạt động?
+=> Vì Java truyền tham trị (copy địa chỉ), ta không thể thay đổi địa chỉ mà biến gốc trỏ tới. Cách duy nhất để tráo đổi là thay đổi dữ liệu bên trong (thuộc tính) của đối tượng mà các biến đó trỏ tới.
