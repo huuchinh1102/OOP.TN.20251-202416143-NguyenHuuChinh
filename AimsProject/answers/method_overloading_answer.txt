@@ -1,0 +1,3 @@
+Nếu trong cùng một lớp Cart đã tồn tại phương thức nhận tham số là mảng addDigitalVideoDisc(DigitalVideoDisc[] discs) mà ta cố tình định nghĩa thêm phương thức addDigitalVideoDisc(DigitalVideoDisc... discs), trình biên dịch (Compiler) sẽ báo lỗi "Duplicate method" (Trùng lặp phương thức).
+=> Lúc này em chọn giải pháp: Varargs (DigitalVideoDisc... discs) và xóa bỏ phương thức dùng mảng ([])
+Vì Varargs linh hoạt hơn và cho phép người dùng truyền vào một danh sách các đối tượng cách nhau bởi dấu phẩy
