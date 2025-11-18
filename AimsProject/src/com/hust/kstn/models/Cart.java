@@ -2,7 +2,7 @@ package com.hust.kstn.models;
 
 public class Cart {
     public static final int MAX_NUMBER_ORDERED = 20;
-
+    
     private DigitalVideoDisc[] itemsInCart = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
     private int qtyOrdered = 0;
 
@@ -13,17 +13,6 @@ public class Cart {
             System.out.println("The disc has been added successfully");
         } else {
             System.out.println("The cart is almost full");
-        }
-    }
-
-    public void addDigitalVideoDisc(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
-        addDigitalVideoDisc(disc1);
-        addDigitalVideoDisc(disc2);
-    }
-
-    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
-        for (DigitalVideoDisc disc : dvdList) {
-            addDigitalVideoDisc(disc);
         }
     }
 
@@ -59,14 +48,18 @@ public class Cart {
         }
         return total;
     }
-
+    
     public void print() {
-        System.out.println("***********************CART***********************");
-        System.out.println("Ordered Items:");
-        for (int i = 0; i < qtyOrdered; i++) {
-            System.out.println((i + 1) + ". DVD - " + itemsInCart[i].getTitle() + " - " + itemsInCart[i].getCategory() + " - " + itemsInCart[i].getDirector() + " - " + itemsInCart[i].getLength() + ": " + itemsInCart[i].getCost() + " $");
+        if (qtyOrdered == 0) {
+            System.out.println("The cart is empty!");
+        } else {
+            System.out.println("======================= THE CURRENT CART =======================");
+            System.out.println("Total items: " + qtyOrdered);
+            for (int i = 0; i < qtyOrdered; i++) {
+                System.out.println(itemsInCart[i].toString());
+            }
+            System.out.println("Subtotal: " + calculateTotalCost() + "$");
+            System.out.println("================================================================");
         }
-        System.out.println("Total cost: " + calculateTotalCost());
-        System.out.println("***************************************************");
     }
 }
