@@ -1,0 +1,13 @@
+Những file và thư mục như kiểu (.settings, bin, .classpath, .project) là các file cấu hình cục bộ (local configuration) của Eclipse hoặc sản phẩm biên dịch, chúng không phải mã nguồn.
+=> Dễ xung đột mã nguồn, hay chạy trên các máy khác nhau bị lỗi (do sai đường dẫn), rác repository (chứa nhiều file không cần thiết)
+Với IntelliJ IDEA => dùng .idea/, *.iml, out/, ...
+Với VSC => dùng .vscode/, bin/.
+
+Nếu đã lỡ commit file tạm lên Git
+B1: Thêm các file cần loại bỏ vào file .gitignore
+B2: Chạy lệnh để xóa file khỏi sự theo dõi của Git (cached) mà không xóa file vật lý:
+- git rm --cached .classpath
+- git rm -r --cached bin/
+- git rm -r --cached .
+- git add .
+B3: Commit 
