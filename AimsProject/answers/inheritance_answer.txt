@@ -1,0 +1,4 @@
+Java chỉ hỗ trợ đơn kế thừa (Single Inheritance) đối với Class vì:
+- Tránh vấn đề "Diamond Problem" (Vấn đề hình thoi): là sự cố xảy ra trong đa kế thừa khi hai lớp cha cùng có một phương thức giống nhau, và lớp con kế thừa cả hai. Khi đó, trình biên dịch sẽ không biết lớp con nên gọi phương thức của lớp cha nào. Java loại bỏ hoàn toàn sự phức tạp này bằng cách cấm đa kế thừa class.
+- Giảm độ phức tạp (Simplicity): Đa kế thừa làm cho thiết kế của ngôn ngữ và mã nguồn trở nên phức tạp, khó bảo trì và dễ bug.
+- Thay thế bằng Interface: Mặc dù không hỗ trợ đa kế thừa Class, Java cho phép một lớp thực thi (implement) nhiều Interface.
